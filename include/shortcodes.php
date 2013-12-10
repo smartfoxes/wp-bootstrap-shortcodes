@@ -2,6 +2,8 @@
 
 add_shortcode( 'row' , "wp_bootstrap_shortcodes_row");
 add_shortcode( 'well' , "wp_bootstrap_shortcodes_well");
+add_shortcode( 'button' , "wp_bootstrap_shortcodes_button");
+add_shortcode( 'glyphicon' , "wp_bootstrap_shortcodes_glyph");
 
 function wp_bootstrap_shortcodes_row($atts, $content="") {
     $class = isset($atts['class']) ? $atts['class'] : null;
@@ -20,6 +22,26 @@ function wp_bootstrap_shortcodes_well($atts, $content="") {
         {$content}
     </div>
     ");
+}
+
+function wp_bootstrap_shortcodes_button($atts, $content="") {
+    $class = isset($atts['class']) ? $atts['class'] : null;
+    
+    if(preg_match("/<a(.*?)>(.*?)<\/a>/is",$content,$m)) {
+        // link found
+        $params = $m[1];
+        $content = $m[2];        
+    } 
+    return "<a class=\"btn btn-default $class\" {$params}>{$content}</a>";
+}
+
+
+function wp_bootstrap_shortcodes_glyph($atts, $content="") {
+    $class = isset($atts['class']) ? $atts['class'] : null;
+    if(!$class) {
+        return $content;
+    }
+    return "<span class=\"glyphicon {$class}\"></span>{$content}";
 }
 
 for($i=1;$i<=12;$i++) {
