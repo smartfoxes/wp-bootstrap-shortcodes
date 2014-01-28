@@ -4,6 +4,7 @@ add_shortcode( 'row' , "wp_bootstrap_shortcodes_row");
 add_shortcode( 'well' , "wp_bootstrap_shortcodes_well");
 add_shortcode( 'button' , "wp_bootstrap_shortcodes_button");
 add_shortcode( 'glyphicon' , "wp_bootstrap_shortcodes_glyph");
+add_shortcode( 'hr' , "wp_bootstrap_shortcodes_hr");
 
 function wp_bootstrap_shortcodes_row($atts, $content="") {
     $class = isset($atts['class']) ? $atts['class'] : null;
@@ -53,4 +54,11 @@ for($i=1;$i<=12;$i++) {
 }
 
 //add_shortcode( 'baztag', array( 'MyPlugin', 'baztag_func' ) );
+
+function wp_bootstrap_shortcodes_hr($atts, $content="") {
+    $class = isset($atts['class']) ? $atts['class'] : null;
+
+    return do_shortcode("
+    <hr class=\"{$class}\"\>{$content}");
+}
  
