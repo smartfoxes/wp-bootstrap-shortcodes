@@ -17,9 +17,10 @@ function wp_bootstrap_shortcodes_row($atts, $content="") {
 
 function wp_bootstrap_shortcodes_well($atts, $content="") {
     $class = isset($atts['class']) ? $atts['class'] : null;
+    $background = isset($atts['background']) ? $atts['background'] : null;
     
     return do_shortcode("
-    <div class=\"well {$class}\">
+    <div class=\"well {$class}\"".($background ? ' style="background:url('.$background.')"':"").">
         {$content}
     </div>
     ");
@@ -50,7 +51,7 @@ for($i=1;$i<=12;$i++) {
     add_shortcode( 'col_sm_'.$i , array("WP_Bootstrap_Shortcodes_Col", "sm_".$i));
     add_shortcode( 'col_lg_'.$i , array("WP_Bootstrap_Shortcodes_Col", "lg_".$i));
     add_shortcode( 'col_md_'.$i , array("WP_Bootstrap_Shortcodes_Col", "md_".$i));
-    add_shortcode( 'col'.$i , array("WP_Bootstrap_Shortcodes_Col", "md_".$i));
+    add_shortcode( 'col'.$i , array("WP_Bootstrap_Shortcodes_Col", "sm_".$i));
 }
 
 //add_shortcode( 'baztag', array( 'MyPlugin', 'baztag_func' ) );
