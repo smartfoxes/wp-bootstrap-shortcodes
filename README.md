@@ -24,7 +24,7 @@ Generates `<div class="row"> ... </div>` container.
 
 Parameters
 
-* class (optional) - CSS class to add to the <div> tag. Example: `[col4 class="myclass"]col content[/col]`
+* class (optional) - CSS class to add to the `<div>` tag. Example: `[col4 class="myclass"]col content[/col]`
 
 [col_XX_NN] and [colNN]
 -----------------------
@@ -39,7 +39,7 @@ and NN is number of the Grid units to use, values 1..12
 
 Parameters
 
-* class (optional) - CSS class to add to the <div> tag. Example: `[row class="myclass"]row content[/row]`
+* class (optional) - CSS class to add to the `<div>` tag. Example: `[row class="myclass"]row content[/row]`
 
 [well]
 ------
@@ -47,7 +47,7 @@ Generates `<div class="well"> ... </div>` container.
 
 Parameters
 
-* class (optional) - CSS class to add to the <div> tag, e.g. [row class="myclass"]
+* class (optional) - CSS class to add to the `<div>` tag, e.g. `[row class="myclass"]`
 * background (optional) - URL of the background image to be used as a well background - added as a style attribute. Example: `[well background="http://mysite.com/myimage"]well content[/well]`
 
 [button]
@@ -60,7 +60,7 @@ Usage
 
 Parameters
 
-* class (optional) - CSS class to add to the <div> tag. Example: `[button class="myclass"]<a href="#">My Button</a>[/button]`
+* class (optional) - CSS class to add to the `<div>` tag. Example: `[button class="myclass"]<a href="#">My Button</a>[/button]`
 
 [glyphicon]
 -----------
@@ -76,8 +76,8 @@ Parameters
 
 [hr]
 ----
-Horizontal ruler <hr>. 
+Horizontal ruler `<hr>`. 
 
 Parameters
 
-* class (optional) - CSS class to add to the <hr> tag, e.g. [hr class="myclass"]
+* class (optional) - CSS class to add to the `<hr>` tag, e.g. `[hr class="myclass"]`
