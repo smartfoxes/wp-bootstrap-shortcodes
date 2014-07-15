@@ -38,9 +38,10 @@ function wp_bootstrap_shortcodes_row($atts, $content="") {
 
 function wp_bootstrap_shortcodes_well($atts, $content="") {
     $class = isset($atts['class']) ? $atts['class'] : "default";
+    $background = isset($atts['background']) ? $atts['background'] : null;
     
     return do_shortcode("
-    <div class=\"well {$class}\">
+    <div class=\"well {$class}\"".($background ? ' style="background:url('.$background.')"':"").">
         {$content}
     </div>
     ");
